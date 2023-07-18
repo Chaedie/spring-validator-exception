@@ -1,5 +1,6 @@
 package com.example.valid_exception;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

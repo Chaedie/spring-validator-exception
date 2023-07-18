@@ -1,10 +1,10 @@
 package com.example.valid_exception.controller;
 
 
-import com.example.jpaprac.data.dto.ChangeProductNameDto;
-import com.example.jpaprac.data.dto.ProductDto;
-import com.example.jpaprac.data.dto.ProductResponseDto;
-import com.example.jpaprac.service.ProductService;
+import com.example.valid_exception.data.dto.ChangeProductNameDto;
+import com.example.valid_exception.data.dto.ProductDto;
+import com.example.valid_exception.data.dto.ProductResponseDto;
+import com.example.valid_exception.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

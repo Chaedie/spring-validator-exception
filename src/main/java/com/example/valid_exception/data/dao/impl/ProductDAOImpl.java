@@ -1,9 +1,9 @@
 package com.example.valid_exception.data.dao.impl;
 
 
-import com.example.jpaprac.data.dao.ProductDAO;
-import com.example.jpaprac.data.entity.Product;
-import com.example.jpaprac.data.repository.ProductRepository;
+import com.example.valid_exception.data.dao.ProductDAO;
+import com.example.valid_exception.data.entity.Product;
+import com.example.valid_exception.data.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +27,7 @@ public class ProductDAOImpl implements ProductDAO {
         return savedProduct;
         
     }
-1
+
     @Override
     public Product selectProduct(Long number) {
         Product selectedProduct = productRepository.getById(number);

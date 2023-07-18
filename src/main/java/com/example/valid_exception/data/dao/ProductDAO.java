@@ -1,7 +1,7 @@
 package com.example.valid_exception.data.dao;
 
 
-import com.example.jpaprac.data.entity.Product;
+import com.example.valid_exception.data.entity.Product;
 
 public interface ProductDAO {
     Product inisertProduct(Product product);

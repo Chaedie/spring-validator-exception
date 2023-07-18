@@ -1,5 +1,6 @@
 package com.example.valid_exception.data.dto;
 
+
 import lombok.*;
 
 @Getter

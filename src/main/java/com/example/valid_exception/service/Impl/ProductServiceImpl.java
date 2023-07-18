@@ -1,10 +1,11 @@
 package com.example.valid_exception.service.Impl;
 
-import com.example.jpaprac.data.dao.ProductDAO;
-import com.example.jpaprac.data.dto.ProductDto;
-import com.example.jpaprac.data.dto.ProductResponseDto;
-import com.example.jpaprac.data.entity.Product;
-import com.example.jpaprac.service.ProductService;
+
+import com.example.valid_exception.data.dao.ProductDAO;
+import com.example.valid_exception.data.dto.ProductDto;
+import com.example.valid_exception.data.dto.ProductResponseDto;
+import com.example.valid_exception.data.entity.Product;
+import com.example.valid_exception.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
