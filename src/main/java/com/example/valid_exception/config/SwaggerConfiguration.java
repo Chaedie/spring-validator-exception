@@ -1,0 +1,85 @@
+package com.example.valid_exception.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpHeaders;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ParameterBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.schema.ModelRef;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Parameter;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Configuration
+public class SwaggerConfiguration {
+
+    private static final String API_NAME = "Spring Boot Application";
+    private static final String API_VERSION = "1.0.0";
+    private static final String API_DESCRIPTION = "스프링 부트 애플리케이션입니다.";
+    private static final String BASE_PACKAGE_DIR = "com.example.jpaprac";
+
+    // 접속 경로 : http://localhost:9090/swagger-ui/
+    @Bean
+    public Docket api() {
+        Parameter parameterBuilder = (Parameter) new ParameterBuilder()
+                .name(HttpHeaders.AUTHORIZATION)
+                .description("Access Tocken")
+                .modelRef(new ModelRef("string"))
+                .parameterType("header")
+                .required(false)
+                .build();
+
+        List<Parameter> globalParameters = new ArrayList<>();
+        globalParameters.add(parameterBuilder);
+
+        return new Docket(DocumentationType.SWAGGER_2)
+                .globalOperationParameters(globalParameters)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE_DIR))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    public ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(API_NAME)
+                .version(API_VERSION)
+                .description(API_DESCRIPTION)
+                .build();
+    }
+}
+
+// package com.example.jpaprac.config;
+//
+// import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+// import io.swagger.v3.oas.annotations.info.Info;
+// import lombok.RequiredArgsConstructor;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
+//
+// // SwaggerConfig.java
+// @OpenAPIDefinition(
+//         info = @Info(title = "API 명세서",
+//                 description = "API 명세서",
+//                 version = "v1"))
+// @RequiredArgsConstructor
+// @Configuration
+// public class SwaggerConfiguration {
+//
+//     @Bean
+//     public GroupedOpenApi chatOpenApi() {
+//         String[] paths = {"/v1/**"};
+//
+//         return GroupedOpenApi.builder()
+//                 .group("API v1")
+//                 .pathsToMatch(paths)
+//                 .build();
+//     }
+// }
